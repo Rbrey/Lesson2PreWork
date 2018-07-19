@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "_MyLayout";
+}
+
+<head>
+    <style>
+        header {background-color: lightblue;}
+        nav {background-color: lightgray;}
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <li><a asp-area="" asp-controller="MyNew1" asp-action="Index">Home</a></li>
+        <li><a asp-area="" asp-controller="MyNew1" asp-action="About">About</a></li>
+        <li><a asp-area="" asp-controller="MyNew1" asp-action="Contact">Contact</a></li>
+    </nav>
+    <header></header>
+    <div>
+        @RenderBody()
+    </div>
+
+</body>
+
