@@ -39,6 +39,8 @@ namespace Lesson2PreWork
 
             app.UseStaticFiles();
 
+            app.UseMiddleware<UnwrapExceptionMiddleware>();
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
