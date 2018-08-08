@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
@@ -27,6 +28,16 @@ namespace Lesson2PreWork
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseMiddleware<TimingMiddleware>();
+            //app.Use(async (context, next) =>
+            //{
+            //    var start = new Stopwatch();
+            //    start.Start();
+            //    await next();
+            //    start.Stop();
+            //    Console.WriteLine(start.ElapsedTicks);
+            //});
+
             if (env.IsDevelopment())
             {
                 app.UseBrowserLink();
